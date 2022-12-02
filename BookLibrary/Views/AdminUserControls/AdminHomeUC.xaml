@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="BookLibrary.Views.AdminHomeUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BookLibrary.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="{StaticResource babyPowder}">
+        <StackPanel HorizontalAlignment="Left">
+            <Button Command="{Binding BackCommand}">
+                <Image  Source="/Images/leftarrow.png" Width="30"></Image>
+            </Button>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Bottom">
+            <Label FontWeight="Bold"  FontSize="55"  Foreground="Green" FontFamily="Kunstler Script">Library</Label>
+        </StackPanel>
+
+        <StackPanel Margin="15" VerticalAlignment="Top">
+            <Border Width="450" BorderThickness="2" BorderBrush="{StaticResource coffee}">
+                <Label Foreground="{StaticResource yellowGreen}" FontWeight="Bold" FontSize="50" HorizontalContentAlignment="Center">Admin Menu</Label>
+            </Border>
+        </StackPanel>
+        <StackPanel VerticalAlignment="Center" Orientation="Vertical" HorizontalAlignment="Center">
+            <Button Command="{Binding ShowCommand}" Width="200" FontSize="25" Style="{StaticResource MyButton}" Margin="10">Show Books</Button>
+            <Button Command="{Binding ModifyCommand}" Width="200" FontSize="25" Style="{StaticResource MyButton}" Margin="10">Modify Books</Button>
+            <Button Command="{Binding ReviewRentsCommand}" Width="200" FontSize="25" Style="{StaticResource MyButton}" Margin="10">Review Rents</Button>
+        </StackPanel>
+
+    </Grid>
+</UserControl>

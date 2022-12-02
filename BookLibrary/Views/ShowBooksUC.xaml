@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="BookLibrary.Views.ShowBooksUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BookLibrary.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="{StaticResource babyPowder}">
+        <StackPanel>
+            <StackPanel HorizontalAlignment="Left">
+                <Button Command="{Binding BackCommand}">
+                    <Image  Source="/Images/leftarrow.png" Width="30"></Image>
+                </Button>
+            </StackPanel>
+            <StackPanel Margin="15">
+                <Label Foreground="{StaticResource yellowGreen}" FontWeight="Bold"
+                       FontSize="35">Books</Label>
+            </StackPanel>
+            <StackPanel>
+                <DataGrid Name="allBooksDataGrid"></DataGrid>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>

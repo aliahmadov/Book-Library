@@ -19,3 +19,15 @@ C:\Users\eliah\source\repos\BookLibrary\BookLibrary\obj\Debug\BookLibrary.pdb
 C:\Users\eliah\source\repos\BookLibrary\BookLibrary\obj\Debug\ResourceDictionaries\ColorDictionary.baml
 C:\Users\eliah\source\repos\BookLibrary\BookLibrary\obj\Debug\App.baml
 C:\Users\eliah\source\repos\BookLibrary\BookLibrary\obj\Debug\ResourceDictionaries\ButtonDictionary.baml
+C:\Users\eliah\source\repos\BookLibrary\BookLibrary\obj\Debug\Views\AdminHomeUC.g.cs
+C:\Users\eliah\source\repos\BookLibrary\BookLibrary\obj\Debug\Views\AdminHomeUC.baml
+C:\Users\eliah\source\repos\BookLibrary\BookLibrary\obj\Debug\Views\ShowBooksUC.g.cs
+C:\Users\eliah\source\repos\BookLibrary\BookLibrary\obj\Debug\Views\ShowBooksUC.baml
+C:\Users\eliah\source\repos\BookLibrary\BookLibrary\obj\Debug\Views\ModifyUC.g.cs
+C:\Users\eliah\source\repos\BookLibrary\BookLibrary\obj\Debug\Views\ModifyUC.baml
+C:\Users\eliah\source\repos\BookLibrary\BookLibrary\obj\Debug\Windows\UpdateWindow.g.cs
+C:\Users\eliah\source\repos\BookLibrary\BookLibrary\obj\Debug\Windows\UpdateWindow.baml
+C:\Users\eliah\source\repos\BookLibrary\BookLibrary\obj\Debug\Windows\InsertWindow.g.cs
+C:\Users\eliah\source\repos\BookLibrary\BookLibrary\obj\Debug\Windows\InsertWindow.baml
+C:\Users\eliah\source\repos\BookLibrary\BookLibrary\obj\Debug\Windows\DeleteWindow.g.cs
+C:\Users\eliah\source\repos\BookLibrary\BookLibrary\obj\Debug\Windows\DeleteWindow.baml

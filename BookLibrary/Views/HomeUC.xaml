@@ -7,18 +7,23 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Background="{StaticResource babyPowder}">
+        <StackPanel HorizontalAlignment="Left">
+            <Button Command="{Binding BackCommand}">
+                <Image  Source="/Images/leftarrow.png" Width="30"></Image>
+            </Button>
+        </StackPanel>
         <StackPanel HorizontalAlignment="Left" VerticalAlignment="Bottom">
             <Label FontWeight="Bold"  FontSize="55"  Foreground="Green" FontFamily="Kunstler Script">Library</Label>
         </StackPanel>
 
-        <StackPanel Margin="30">
+        <StackPanel Margin="35">
             <Border BorderThickness="2" BorderBrush="{StaticResource coffee}">
                 <Label Foreground="{StaticResource yellowGreen}" FontWeight="Bold" FontSize="50" HorizontalContentAlignment="Center">Main Menu</Label>
             </Border>
         </StackPanel>
         <StackPanel VerticalAlignment="Center" Orientation="Horizontal" HorizontalAlignment="Center">
-            <Button Width="200" FontSize="35" Style="{StaticResource MyButton}" Margin="10">Admin</Button>
-            <Button Width="200" FontSize="35" Style="{StaticResource MyButton}" Margin="10">User</Button>
+            <Button Command="{Binding AdminCommand}" Width="200" FontSize="35" Style="{StaticResource MyButton}" Margin="10">Admin</Button>
+            <Button Command="{Binding UserCommand}" Width="200" FontSize="35" Style="{StaticResource MyButton}" Margin="10">User</Button>
         </StackPanel>
 
     </Grid>
