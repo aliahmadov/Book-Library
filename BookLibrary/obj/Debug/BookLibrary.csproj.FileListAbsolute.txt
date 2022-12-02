@@ -31,3 +31,7 @@ C:\Users\eliah\source\repos\BookLibrary\BookLibrary\obj\Debug\Windows\InsertWind
 C:\Users\eliah\source\repos\BookLibrary\BookLibrary\obj\Debug\Windows\InsertWindow.baml
 C:\Users\eliah\source\repos\BookLibrary\BookLibrary\obj\Debug\Windows\DeleteWindow.g.cs
 C:\Users\eliah\source\repos\BookLibrary\BookLibrary\obj\Debug\Windows\DeleteWindow.baml
+C:\Users\eliah\source\repos\BookLibrary\BookLibrary\obj\Debug\Views\UserHomeUC.g.cs
+C:\Users\eliah\source\repos\BookLibrary\BookLibrary\obj\Debug\Views\UserHomeUC.baml
+C:\Users\eliah\source\repos\BookLibrary\BookLibrary\obj\Debug\Views\UserShowBooksUC.g.cs
+C:\Users\eliah\source\repos\BookLibrary\BookLibrary\obj\Debug\Views\UserShowBooksUC.baml

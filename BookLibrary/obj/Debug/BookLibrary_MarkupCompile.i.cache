@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\eliah\source\repos\BookLibrary\BookLibrary\App.xaml
-10748528440
+121818788120
 
-251887993227
+30241514673
 141458853696
-ResourceDictionaries\ButtonDictionary.xaml;ResourceDictionaries\ColorDictionary.xaml;Views\AdminHomeUC.xaml;Views\HomeUC.xaml;Views\MainWindow.xaml;Views\ModifyUC.xaml;Views\ShowBooksUC.xaml;Windows\DeleteWindow.xaml;Windows\InsertWindow.xaml;Windows\UpdateWindow.xaml;
+ResourceDictionaries\ButtonDictionary.xaml;ResourceDictionaries\ColorDictionary.xaml;Views\AdminHomeUC.xaml;Views\HomeUC.xaml;Views\MainWindow.xaml;Views\ModifyUC.xaml;Views\ShowBooksUC.xaml;Views\UserHomeUC.xaml;Views\UserShowBooksUC.xaml;Windows\DeleteWindow.xaml;Windows\InsertWindow.xaml;Windows\UpdateWindow.xaml;
 
-True
+False
 

@@ -57,9 +57,12 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Models\MyBook.cs" />
+    <Compile Include="Models\UserBook.cs" />
     <Compile Include="Services\DatabaseController.cs" />
     <Compile Include="ViewModels\ModifyViewModel.cs" />
     <Compile Include="ViewModels\ShowBooksViewModel.cs" />
+    <Compile Include="ViewModels\UserHomeViewModel.cs" />
+    <Compile Include="ViewModels\UserShowBooksViewModel.cs" />
     <Compile Include="ViewModels\Window ViewModels\DeleteViewModel.cs" />
     <Compile Include="ViewModels\Window ViewModels\InsertWindowViewModel.cs" />
     <Compile Include="ViewModels\Window ViewModels\UpdateWindowViewModel.cs" />
@@ -68,6 +71,12 @@
     </Compile>
     <Compile Include="Views\ShowBooksUC.xaml.cs">
       <DependentUpon>ShowBooksUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserHomeUC.xaml.cs">
+      <DependentUpon>UserHomeUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserShowBooksUC.xaml.cs">
+      <DependentUpon>UserShowBooksUC.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\DeleteWindow.xaml.cs">
       <DependentUpon>DeleteWindow.xaml</DependentUpon>
@@ -126,6 +135,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ShowBooksUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UserHomeUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UserShowBooksUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

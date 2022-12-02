@@ -19,6 +19,7 @@ namespace BookLibrary.ViewModels
 
         public HomeViewModel()
         {
+
             AdminCommand = new RelayCommand(c =>
             {
                 var adminUC = new AdminHomeUC();
@@ -27,6 +28,16 @@ namespace BookLibrary.ViewModels
 
                 App.MyGrid.Children.RemoveAt(0);
                 App.MyGrid.Children.Add(adminUC);
+            });
+
+            UserCommand = new RelayCommand(c =>
+            {
+                var userUc=new UserHomeUC();
+                var userViewModel = new UserHomeViewModel();
+                userUc.DataContext = userViewModel;
+
+                App.MyGrid.Children.RemoveAt(0);
+                App.MyGrid.Children.Add(userUc);
             });
         }
     }
