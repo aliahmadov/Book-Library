@@ -64,8 +64,11 @@
     <Compile Include="ViewModels\ShowBooksViewModel.cs" />
     <Compile Include="ViewModels\UserHomeViewModel.cs" />
     <Compile Include="ViewModels\UserShowBooksViewModel.cs" />
+    <Compile Include="ViewModels\UserTakeBookViewModel.cs" />
     <Compile Include="ViewModels\Window ViewModels\AdditionalViewModels\AddAuthorViewModel.cs" />
-    <Compile Include="ViewModels\Window ViewModels\AdditionalViewModels\AddOtherNamesViewModel.cs" />
+    <Compile Include="ViewModels\Window ViewModels\AdditionalViewModels\AddCategoryViewModel.cs" />
+    <Compile Include="ViewModels\Window ViewModels\AdditionalViewModels\AddPressViewModel.cs" />
+    <Compile Include="ViewModels\Window ViewModels\AdditionalViewModels\AddThemesViewModel.cs" />
     <Compile Include="ViewModels\Window ViewModels\DeleteViewModel.cs" />
     <Compile Include="ViewModels\Window ViewModels\InsertWindowViewModel.cs" />
     <Compile Include="ViewModels\Window ViewModels\UpdateWindowViewModel.cs" />
@@ -81,11 +84,20 @@
     <Compile Include="Views\UserShowBooksUC.xaml.cs">
       <DependentUpon>UserShowBooksUC.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\UserTakeBookUC.xaml.cs">
+      <DependentUpon>UserTakeBookUC.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\Additional Windows\AddAuthorWindow.xaml.cs">
       <DependentUpon>AddAuthorWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\Additional Windows\AddOtherNamesWindow.xaml.cs">
-      <DependentUpon>AddOtherNamesWindow.xaml</DependentUpon>
+    <Compile Include="Windows\Additional Windows\AddCategoryWindow.xaml.cs">
+      <DependentUpon>AddCategoryWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Additional Windows\AddPressWindow.xaml.cs">
+      <DependentUpon>AddPressWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Additional Windows\AddThemesWindow.xaml.cs">
+      <DependentUpon>AddThemesWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\DeleteWindow.xaml.cs">
       <DependentUpon>DeleteWindow.xaml</DependentUpon>
@@ -155,11 +167,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\UserTakeBookUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\Additional Windows\AddAuthorWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\Additional Windows\AddOtherNamesWindow.xaml">
+    <Page Include="Windows\Additional Windows\AddCategoryWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Additional Windows\AddPressWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Additional Windows\AddThemesWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

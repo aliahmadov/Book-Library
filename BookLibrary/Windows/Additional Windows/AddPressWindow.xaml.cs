@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace BookLibrary.Windows.Additional_Windows
 {
     /// <summary>
-    /// Interaction logic for AddOtherNamesWindow.xaml
+    /// Interaction logic for AddPressWindow.xaml
     /// </summary>
-    public partial class AddOtherNamesWindow : Window
+    public partial class AddPressWindow : Window
     {
-        public AddOtherNamesWindow()
+        public AddPressWindow()
         {
             InitializeComponent();
         }

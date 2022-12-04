@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace BookLibrary.ViewModels.Window_ViewModels.AdditionalViewModels
 {
-    internal class AddOtherNamesViewModel:BaseViewModel
+    internal class AddPressViewModel:BaseViewModel
     {
         private string name;
 
         public string Name
         {
             get { return name; }
-            set { name = value;OnPropertyChanged();}
+            set { name = value;OnPropertyChanged(); }
         }
 
     }

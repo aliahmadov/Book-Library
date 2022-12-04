@@ -50,7 +50,7 @@
                 <ComboBox Name="themesCmbBox" SelectedItem="{Binding SelectedThemes}"
                           Width="200" Margin="25,10,0,10"></ComboBox>
                 <Label Name="themesLabel" Foreground="Gray" FontSize="8" VerticalAlignment="Center" Visibility="Visible">Choose or</Label>
-                <Button Command="{Binding AddOtherCommand}" Margin="0,10,10,10" Width="60" Background="Green" Foreground="White" 
+                <Button Command="{Binding AddThemesCommand}" Margin="0,10,10,10" Width="60" Background="Green" Foreground="White" 
                         FontWeight="Bold" BorderThickness="0">Add New
                     <Button.Resources>
                         <Style TargetType="Border">
@@ -71,7 +71,7 @@
                 <ComboBox Name="ctgCmbBox" SelectedItem="{Binding SelectedCategory}"
                           Width="200" Margin="18,10,0,10"></ComboBox>
                 <Label Name="catLabel" Foreground="Gray" FontSize="8" VerticalAlignment="Center" Visibility="Visible">Choose or</Label>
-                <Button Command="{Binding AddOtherCommand}" Margin="0,10,10,10" Width="60" Background="Green" Foreground="White" 
+                <Button Command="{Binding AddCategoryCommand}" Margin="0,10,10,10" Width="60" Background="Green" Foreground="White" 
                         FontWeight="Bold" BorderThickness="0">Add New
                     <Button.Resources>
                         <Style TargetType="Border">
@@ -111,7 +111,7 @@
                 <ComboBox Name="pressCmbBox" SelectedItem="{Binding SelectedPress}"
                           Width="200" Margin="38,10,0,10"></ComboBox>
                 <Label Name="pressLabel" Foreground="Gray" FontSize="8" VerticalAlignment="Center">Choose or</Label>
-                <Button Command="{Binding AddOtherCommand}" Margin="0,10,10,10" Width="60" Background="Green" Foreground="White" 
+                <Button Command="{Binding AddPressCommand}" Margin="0,10,10,10" Width="60" Background="Green" Foreground="White" 
                         FontWeight="Bold" BorderThickness="0">Add New
                     <Button.Resources>
                         <Style TargetType="Border">

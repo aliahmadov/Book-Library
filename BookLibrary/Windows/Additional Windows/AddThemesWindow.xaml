@@ -1,18 +1,18 @@
-﻿<Window x:Class="BookLibrary.Windows.Additional_Windows.AddOtherNamesWindow"
+﻿<Window x:Class="BookLibrary.Windows.Additional_Windows.AddThemesWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BookLibrary.Windows.Additional_Windows"
         mc:Ignorable="d"
-        Title="AddOtherNamesWindow" Height="125" Width="250">
+        Title="AddThemesWindow" Height="125" Width="250">
     <Grid Background="White">
         <StackPanel>
             <Label Margin="10" HorizontalContentAlignment="Center" 
                        Foreground="Red" FontWeight="Black">Delete Forum</Label>
 
             <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                <Label>Name</Label>
+                <Label>Themes</Label>
                 <TextBox Margin="10,0,0,0" Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="145"></TextBox>
             </StackPanel>
         </StackPanel>

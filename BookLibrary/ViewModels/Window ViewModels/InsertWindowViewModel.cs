@@ -54,8 +54,16 @@ namespace BookLibrary.ViewModels.Window_ViewModels
             set { selectedThemes = value; OnPropertyChanged(); }
         }
 
-        public RelayCommand AddOtherCommand { get; set; }
+        public string AddedAuthorName { get; set; }
+        public string AddedAuthorSurname { get; set; }
+        public string AddedCategory { get; set; }
 
+        public string AddedPress { get; set; }
+
+        public string AddedThemes { get; set; }
+        public RelayCommand AddCategoryCommand { get; set; }
+        public RelayCommand AddPressCommand { get; set; }
+        public RelayCommand AddThemesCommand { get; set; }
         public RelayCommand AddAuthorCommand { get; set; }
 
         public void DefaultValueToRadioButtons(StackPanel stackPanel)
@@ -98,11 +106,42 @@ namespace BookLibrary.ViewModels.Window_ViewModels
                 var view = new AddAuthorWindow();
                 var viewModel = new AddAuthorViewModel();
                 view.DataContext = viewModel;
-
                 view.ShowDialog();
-
+                AddedAuthorName = viewModel.Name;
+                AddedAuthorSurname = viewModel.Surname;
             });
 
+            AddPressCommand = new RelayCommand(c =>
+            {
+                var view=new AddPressWindow();
+                var viewModel = new AddPressViewModel();
+                view.DataContext=viewModel;
+
+                view.ShowDialog();
+                AddedPress = viewModel.Name;
+            });
+
+
+            AddCategoryCommand = new RelayCommand(c =>
+            {
+                var view = new AddCategoryWindow();
+                var viewModel = new AddCategoryViewModel();
+                view.DataContext=viewModel;
+
+                view.ShowDialog();
+                AddedCategory=viewModel.Name;
+            });
+
+            AddThemesCommand = new RelayCommand(c =>
+            {
+                var view = new AddThemesWindow();
+                var viewModel = new AddThemesViewModel();
+                view.DataContext = viewModel;
+
+                view.ShowDialog();
+                AddedThemes = viewModel.Name;
+
+            });
 
         }
     }

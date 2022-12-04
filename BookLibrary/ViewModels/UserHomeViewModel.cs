@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 
 namespace BookLibrary.ViewModels
 {
-    internal class UserHomeViewModel
+    internal class UserHomeViewModel:BaseViewModel
     {
         public RelayCommand ShowCommand { get; set; }
         public RelayCommand TakeCommand { get; set; }
         public RelayCommand ReturnCommand { get; set; }
-
+        public RelayCommand BackCommand { get; set; }
 
         private UserBook GetUserBook(Book book)
         {
@@ -54,6 +54,15 @@ namespace BookLibrary.ViewModels
 
         public UserHomeViewModel()
         {
+
+            BackPage = App.MyGrid.Children[0];
+
+            BackCommand = new RelayCommand(c =>
+            {
+                App.MyGrid.Children.RemoveAt(0);
+                App.MyGrid.Children.Add(BackPage);
+            });
+
             ShowCommand = new RelayCommand(c =>
             {
 
@@ -67,6 +76,23 @@ namespace BookLibrary.ViewModels
 
                 App.MyGrid.Children.RemoveAt(0);
                 App.MyGrid.Children.Add(view);
+
+            });
+
+
+            TakeCommand = new RelayCommand(d =>
+            {
+                var view = new UserTakeBookUC();
+                var viewModel = new UserTakeBookViewModel();
+                view.DataContext = viewModel;
+
+                App.MyGrid.Children.RemoveAt(0);
+                App.MyGrid.Children.Add(view);
+
+            });
+
+            ReturnCommand = new RelayCommand(d =>
+            {
 
             });
         }

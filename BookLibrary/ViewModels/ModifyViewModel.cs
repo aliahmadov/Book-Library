@@ -30,6 +30,7 @@ namespace BookLibrary.ViewModels
             set { selectedBook = value; OnPropertyChanged(); }
         }
 
+        public Book InsertedBook { get; set; }
 
         private bool IsFull(Book book)
         {
@@ -52,7 +53,7 @@ namespace BookLibrary.ViewModels
         public ModifyViewModel()
         {
             BackPage = App.MyGrid.Children[0];
-
+            InsertedBook = new Book();
             BackCommand = new RelayCommand(c =>
             {
                 App.MyGrid.Children.RemoveAt(0);
@@ -104,17 +105,89 @@ namespace BookLibrary.ViewModels
                 insertViewModel.DefaultValueToRadioButtons(insertView.insertStackPanel);
                 insertView.ShowDialog();
 
-               
+                var theme = new Theme();
+                var category = new Category();
+                var author = new Author();
+                var press = new Press();
+                int press_id = 0;
+                int theme_id = 0;
+                int author_id = 0;
+                int category_id = 0;
+                if (insertViewModel.SelectedPress == null)
+                {
+                    press.Name = insertViewModel.AddedPress;
+                    var lastID = dtx.Presses.Skip(dtx.Presses.Count() - 1).First().Id;
+                    press.Id = lastID + 1;
+                    DatabaseController.InsertPress(press);
+                    InsertedBook.Id_Press = press.Id;
+                }
+                else
+                {
+                    press_id = dtx.Presses.FirstOrDefault(d => d.Name == insertViewModel.SelectedPress).Id;
+                    InsertedBook.Id_Press = press_id;
+                }
+
+                if (insertViewModel.SelectedThemes == null)
+                {
+                    theme.Name = insertViewModel.AddedThemes;
+                    var lastID = dtx.Themes.Skip(dtx.Themes.Count() - 1).First().Id;
+                    theme.Id = lastID + 1;
+                    InsertedBook.Id_Themes = theme.Id;
+                    DatabaseController.InsertThemes(theme);
+                }
+                else
+                {
+                    theme_id = dtx.Themes.FirstOrDefault(d => d.Name == insertViewModel.SelectedThemes).Id;
+                    InsertedBook.Id_Themes = theme_id;
+                }
+
+                if (insertViewModel.SelectedCategory == null)
+                {
+                    category.Name = insertViewModel.AddedCategory;
+                    var lastID = dtx.Categories.Skip(dtx.Categories.Count() - 1).First().Id;
+                    category.Id = lastID + 1;
+
+                    InsertedBook.Id_Category = category.Id;
+                    DatabaseController.InsertCategory(category);
+                }
+                else
+                {
+                    category_id = dtx.Categories.FirstOrDefault(d => d.Name == insertViewModel.SelectedCategory).Id;
+                    InsertedBook.Id_Category = category_id;
+                }
+
+                if (insertViewModel.SelectedAuthor == null)
+                {
+                    author.FirstName = insertViewModel.AddedAuthorName;
+                    author.LastName = insertViewModel.AddedAuthorSurname;
+                    var lastID = dtx.Authors.Skip(dtx.Authors.Count() - 1).First().Id;
+                    author.Id = lastID + 1;
+
+                    InsertedBook.Id_Author = author.Id;
+                    DatabaseController.InsertAuthor(author);
+                }
+                else
+                {
+                    author_id = dtx.Authors.FirstOrDefault(d => d.FirstName + " " + d.LastName == insertViewModel.SelectedAuthor).Id;
+                    InsertedBook.Id_Author = author_id;
+                }
 
                 var insertedBook = insertViewModel.Book;
 
-                var isBookExist = dtx.Books.Any(b => b.Id == insertedBook.Id);
+                InsertedBook.Name = insertedBook.Name;
+                InsertedBook.Quantity = insertedBook.Quantity;
+                InsertedBook.Comment = insertedBook.Comment;
+                InsertedBook.Pages = insertedBook.Pages;
+                InsertedBook.YearPress = insertedBook.YearPress;
+                InsertedBook.Id = insertedBook.Id;
+
+                var isBookExist = dtx.Books.Any(b => b.Id == InsertedBook.Id);
 
 
 
-                if (IsFullInsertForum(insertedBook) && !isBookExist && insertView.qtyLabel.Visibility == Visibility.Hidden)
+                if (IsFullInsertForum(InsertedBook) && !isBookExist && insertView.qtyLabel.Visibility == Visibility.Hidden)
                 {
-                    DatabaseController.InsertBook(insertViewModel.Book);
+                    DatabaseController.InsertBook(InsertedBook);
                     MessageBox.Show($"{insertViewModel.Book.Name} has been added successfully", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
                     ModifyDataGrid.ItemsSource = DatabaseController.GetAllBooks();
 
@@ -136,10 +209,11 @@ namespace BookLibrary.ViewModels
                 deleteWindow.DataContext = deleteViewModel;
                 deleteWindow.ShowDialog();
 
-                if (dtx.Books.Any(d => d.Id == deleteViewModel.Id) && deleteWindow.idLabel.Visibility==Visibility.Hidden)
+                if (dtx.Books.Any(d => d.Id == deleteViewModel.Id) && deleteWindow.idLabel.Visibility == Visibility.Hidden)
                 {
                     DatabaseController.DeleteBook(deleteViewModel.Id);
                     MessageBox.Show($"Book with ID {deleteViewModel.Id} has been deleted successfully", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                    ModifyDataGrid.ItemsSource = DatabaseController.GetAllBooks();
                 }
                 else
                 {

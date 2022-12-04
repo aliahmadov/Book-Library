@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\eliah\source\repos\BookLibrary\BookLibrary\App.xaml
-14907265619
+17-816156169
 
-34-61832806
+40-526297095
 141458853696
-ResourceDictionaries\ButtonDictionary.xaml;ResourceDictionaries\ColorDictionary.xaml;Views\AdminHomeUC.xaml;Views\HomeUC.xaml;Views\MainWindow.xaml;Views\ModifyUC.xaml;Views\ShowBooksUC.xaml;Views\UserHomeUC.xaml;Views\UserShowBooksUC.xaml;Windows\Additional Windows\AddAuthorWindow.xaml;Windows\Additional Windows\AddOtherNamesWindow.xaml;Windows\DeleteWindow.xaml;Windows\InsertWindow.xaml;Windows\UpdateWindow.xaml;
+ResourceDictionaries\ButtonDictionary.xaml;ResourceDictionaries\ColorDictionary.xaml;Views\AdminHomeUC.xaml;Views\HomeUC.xaml;Views\MainWindow.xaml;Views\ModifyUC.xaml;Views\ShowBooksUC.xaml;Views\UserHomeUC.xaml;Views\UserShowBooksUC.xaml;Views\UserTakeBookUC.xaml;Windows\Additional Windows\AddAuthorWindow.xaml;Windows\Additional Windows\AddCategoryWindow.xaml;Windows\Additional Windows\AddPressWindow.xaml;Windows\Additional Windows\AddThemesWindow.xaml;Windows\DeleteWindow.xaml;Windows\InsertWindow.xaml;Windows\UpdateWindow.xaml;
 
 False
 

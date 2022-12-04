@@ -36,6 +36,12 @@ C:\Users\eliah\source\repos\BookLibrary\BookLibrary\obj\Debug\Views\UserHomeUC.b
 C:\Users\eliah\source\repos\BookLibrary\BookLibrary\obj\Debug\Views\UserShowBooksUC.g.cs
 C:\Users\eliah\source\repos\BookLibrary\BookLibrary\obj\Debug\Views\UserShowBooksUC.baml
 C:\Users\eliah\source\repos\BookLibrary\BookLibrary\obj\Debug\Windows\Additional Windows\AddAuthorWindow.g.cs
-C:\Users\eliah\source\repos\BookLibrary\BookLibrary\obj\Debug\Windows\Additional Windows\AddOtherNamesWindow.g.cs
 C:\Users\eliah\source\repos\BookLibrary\BookLibrary\obj\Debug\Windows\Additional Windows\AddAuthorWindow.baml
-C:\Users\eliah\source\repos\BookLibrary\BookLibrary\obj\Debug\Windows\Additional Windows\AddOtherNamesWindow.baml
+C:\Users\eliah\source\repos\BookLibrary\BookLibrary\obj\Debug\Windows\Additional Windows\AddCategoryWindow.g.cs
+C:\Users\eliah\source\repos\BookLibrary\BookLibrary\obj\Debug\Windows\Additional Windows\AddCategoryWindow.baml
+C:\Users\eliah\source\repos\BookLibrary\BookLibrary\obj\Debug\Windows\Additional Windows\AddPressWindow.g.cs
+C:\Users\eliah\source\repos\BookLibrary\BookLibrary\obj\Debug\Windows\Additional Windows\AddThemesWindow.g.cs
+C:\Users\eliah\source\repos\BookLibrary\BookLibrary\obj\Debug\Windows\Additional Windows\AddPressWindow.baml
+C:\Users\eliah\source\repos\BookLibrary\BookLibrary\obj\Debug\Windows\Additional Windows\AddThemesWindow.baml
+C:\Users\eliah\source\repos\BookLibrary\BookLibrary\obj\Debug\Views\UserTakeBookUC.g.cs
+C:\Users\eliah\source\repos\BookLibrary\BookLibrary\obj\Debug\Views\UserTakeBookUC.baml

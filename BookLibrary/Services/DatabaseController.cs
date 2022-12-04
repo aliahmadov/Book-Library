@@ -51,11 +51,53 @@ namespace BookLibrary.Services
             dtx.SubmitChanges();
         }
 
+        public static void InsertPress(Press press)
+        {
+            var dtx = new DataClassesDataContext();
+
+            dtx.Presses.InsertOnSubmit(press);
+
+            dtx.SubmitChanges();
+        }
+
+        public static void InsertThemes(Theme theme)
+        {
+            var dtx = new DataClassesDataContext();
+
+            dtx.Themes.InsertOnSubmit(theme);
+
+            dtx.SubmitChanges();
+        }
+
+        public static void InsertCategory(Category category)
+        {
+            var dtx = new DataClassesDataContext();
+            dtx.Categories.InsertOnSubmit(category);
+
+            dtx.SubmitChanges();
+        }
+
+        public static void InsertAuthor(Author author)
+        {
+            var dtx = new DataClassesDataContext();
+            dtx.Authors.InsertOnSubmit(author);
+
+            dtx.SubmitChanges();
+        }
+
         public static void DeleteBook(int id)
         {
             var dtx = new DataClassesDataContext();
             var book = dtx.Books.FirstOrDefault(c => c.Id == id);
             dtx.Books.DeleteOnSubmit(book);
+
+            dtx.SubmitChanges();
+        }
+
+        public static void InsertSCard(S_Card s_Card)
+        {
+            var dtx = new DataClassesDataContext();
+            dtx.S_Cards.InsertOnSubmit(s_Card);
 
             dtx.SubmitChanges();
         }

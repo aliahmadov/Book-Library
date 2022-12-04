@@ -116,6 +116,7 @@ namespace BookLibrary.Windows
                                         {
                                             button.IsEnabled = true;
                                             comboBox.IsEnabled = false;
+                                            comboBox.SelectedItem = null;
                                         }
 
                                     }
