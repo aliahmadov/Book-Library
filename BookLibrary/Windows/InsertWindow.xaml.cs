@@ -54,135 +54,20 @@ namespace BookLibrary.Windows
             }
         }
 
-        private void themesTxtBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            var hasParsed = int.TryParse(themesTxtBox.Text, out int result);
 
-            if (hasParsed)
-            {
-                var dtx = new DataClassesDataContext();
-                var isThemesExist = dtx.Themes.Any(t => t.Id == result);
-
-                if (!isThemesExist && themesTxtBox.Text.Length != 0 && themesTxtBox.Text != "0")
-                {
-                    themesLabel.Foreground = Brushes.Red;
-                    themesLabel.Content = "Non-existent themes ID";
-                    themesLabel.FontSize = 9;
-                    themesLabel.Visibility = Visibility.Visible;
-                }
-                else
-                {
-                    themesLabel.Visibility = Visibility.Hidden;
-                }
-            }
-            else
-            {
-                themesLabel.Foreground = Brushes.Red;
-                themesLabel.Content = "Wrong Input";
-                themesLabel.FontSize = 9;
-                themesLabel.Visibility = Visibility.Visible;
-            }
-        }
-
-        private void ctgTxtBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            var hasParsed = int.TryParse(ctgTxtBox.Text, out int result);
-            if (hasParsed)
-            {
-                var dtx = new DataClassesDataContext();
-                var isCategoryExist = dtx.Categories.Any(d => d.Id == result);
-
-                if (!isCategoryExist && ctgTxtBox.Text.Length != 0 && ctgTxtBox.Text != "0")
-                {
-                    catLabel.Foreground = Brushes.Red;
-                    catLabel.Content = "Non-existent category ID";
-                    catLabel.FontSize = 9;
-                    catLabel.Visibility = Visibility.Visible;
-                }
-                else
-                {
-                    catLabel.Visibility = Visibility.Hidden;
-                }
-            }
-            else
-            {
-                catLabel.Foreground = Brushes.Red;
-                catLabel.Content = "Wrong Input";
-                catLabel.FontSize = 9;
-                catLabel.Visibility = Visibility.Visible;
-            }
-        }
-
-        private void authorTxtBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            var hasParsed = int.TryParse(authorTxtBox.Text, out int result);
-            if (hasParsed)
-            {
-                var dtx = new DataClassesDataContext();
-                var isAuthorExist = dtx.Authors.Any(a => a.Id == result);
-
-                if (!isAuthorExist && authorTxtBox.Text.Length != 0 && authorTxtBox.Text != "0")
-                {
-                    authorLabel.Foreground = Brushes.Red;
-                    authorLabel.Content = "Non-existent author ID";
-                    authorLabel.FontSize = 9;
-                    authorLabel.Visibility = Visibility.Visible;
-                }
-                else
-                {
-                    authorLabel.Visibility = Visibility.Hidden;
-                }
-            }
-            else
-            {
-                authorLabel.Foreground = Brushes.Red;
-                authorLabel.Content = "Wrong Input";
-                authorLabel.FontSize = 9;
-                authorLabel.Visibility = Visibility.Visible;
-            }
-        }
-
-        private void pressTxtBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            var hasParsed = int.TryParse(pressTxtBox.Text, out int result);
-            if (hasParsed)
-            {
-                var dtx = new DataClassesDataContext();
-                var isPressExist = dtx.Presses.Any(p => p.Id == result);
-
-                if (!isPressExist && pressTxtBox.Text.Length != 0 && pressTxtBox.Text != "0")
-                {
-                    pressLabel.Foreground = Brushes.Red;
-                    pressLabel.Content = "Non-existent press ID";
-                    pressLabel.FontSize = 9;
-                    pressLabel.Visibility = Visibility.Visible;
-                }
-                else
-                {
-                    pressLabel.Visibility = Visibility.Hidden;
-                }
-            }
-            else
-            {
-                pressLabel.Foreground = Brushes.Red;
-                pressLabel.Content = "Wrong Input";
-                pressLabel.FontSize = 9;
-                pressLabel.Visibility = Visibility.Visible;
-            }
-        }
 
         private void qtyTxtBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             var hasParsed = int.TryParse(qtyTxtBox.Text, out int result);
 
-            if(!hasParsed)
+            if (!hasParsed)
             {
                 qtyLabel.Foreground = Brushes.Red;
                 qtyLabel.Content = "Wrong Input";
                 qtyLabel.FontSize = 9;
                 qtyLabel.Visibility = Visibility.Visible;
             }
-            else if(hasParsed && result<0)
+            else if (hasParsed && result < 0)
             {
                 qtyLabel.Foreground = Brushes.Red;
                 qtyLabel.Content = "Enter positive number or 0";
@@ -193,6 +78,58 @@ namespace BookLibrary.Windows
             {
                 qtyLabel.Visibility = Visibility.Hidden;
             }
+        }
+
+        public void CheckRadioButtons(StackPanel stackPanel)
+        {
+
+            foreach (var item in stackPanel.Children)
+            {
+                var button = new Button();
+                var comboBox = new ComboBox();
+                if (item is StackPanel sP)
+                {
+                    foreach (var item2 in sP.Children)
+                    {
+                        if (item2 is Button btn)
+                        {
+                            button = btn;
+                        }
+                        if (item2 is ComboBox cmb)
+                        {
+                            comboBox = cmb;
+                        }
+                        if (item2 is StackPanel sP2)
+                        {
+                            foreach (var item3 in sP2.Children)
+                            {
+                                if (item3 is RadioButton rB)
+                                {
+                                    if (rB.Content.ToString() == "Choose")
+                                    {
+                                        if (rB.IsChecked.Value)
+                                        {
+                                            button.IsEnabled = false;
+                                            comboBox.IsEnabled = true;
+                                        }
+                                        else
+                                        {
+                                            button.IsEnabled = true;
+                                            comboBox.IsEnabled = false;
+                                        }
+
+                                    }
+
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+            CheckRadioButtons(insertStackPanel);
         }
     }
 }

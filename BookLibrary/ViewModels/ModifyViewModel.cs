@@ -97,20 +97,22 @@ namespace BookLibrary.ViewModels
                 var insertView = new InsertWindow();
                 var insertViewModel = new InsertWindowViewModel();
                 insertView.DataContext = insertViewModel;
-
+                insertView.authorCmbBox.ItemsSource = SpecialServices.GetAuthors();
+                insertView.ctgCmbBox.ItemsSource = SpecialServices.GetCategories();
+                insertView.pressCmbBox.ItemsSource = SpecialServices.GetPresses();
+                insertView.themesCmbBox.ItemsSource = SpecialServices.GetThemes();
+                insertViewModel.DefaultValueToRadioButtons(insertView.insertStackPanel);
                 insertView.ShowDialog();
+
+               
 
                 var insertedBook = insertViewModel.Book;
 
                 var isBookExist = dtx.Books.Any(b => b.Id == insertedBook.Id);
-                List<bool> bools = new List<bool>();
-                bools.Add(dtx.Authors.Any(a => a.Id == insertedBook.Id_Author));
-                bools.Add(dtx.Themes.Any(t => t.Id == insertedBook.Id_Themes));
-                bools.Add(dtx.Categories.Any(d => d.Id == insertedBook.Id_Category));
-                bools.Add(dtx.Presses.Any(p => p.Id == insertedBook.Id_Press));
 
 
-                if (IsFullInsertForum(insertedBook) && bools.All(d => d == true) && !isBookExist && insertView.qtyLabel.Visibility == Visibility.Hidden)
+
+                if (IsFullInsertForum(insertedBook) && !isBookExist && insertView.qtyLabel.Visibility == Visibility.Hidden)
                 {
                     DatabaseController.InsertBook(insertViewModel.Book);
                     MessageBox.Show($"{insertViewModel.Book.Name} has been added successfully", "Information", MessageBoxButton.OK, MessageBoxImage.Information);

@@ -35,3 +35,7 @@ C:\Users\eliah\source\repos\BookLibrary\BookLibrary\obj\Debug\Views\UserHomeUC.g
 C:\Users\eliah\source\repos\BookLibrary\BookLibrary\obj\Debug\Views\UserHomeUC.baml
 C:\Users\eliah\source\repos\BookLibrary\BookLibrary\obj\Debug\Views\UserShowBooksUC.g.cs
 C:\Users\eliah\source\repos\BookLibrary\BookLibrary\obj\Debug\Views\UserShowBooksUC.baml
+C:\Users\eliah\source\repos\BookLibrary\BookLibrary\obj\Debug\Windows\Additional Windows\AddAuthorWindow.g.cs
+C:\Users\eliah\source\repos\BookLibrary\BookLibrary\obj\Debug\Windows\Additional Windows\AddOtherNamesWindow.g.cs
+C:\Users\eliah\source\repos\BookLibrary\BookLibrary\obj\Debug\Windows\Additional Windows\AddAuthorWindow.baml
+C:\Users\eliah\source\repos\BookLibrary\BookLibrary\obj\Debug\Windows\Additional Windows\AddOtherNamesWindow.baml
