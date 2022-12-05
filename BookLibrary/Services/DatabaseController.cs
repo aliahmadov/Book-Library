@@ -42,6 +42,22 @@ namespace BookLibrary.Services
             
         }
 
+        public static void UpdateSCard(S_Card s_card)
+        {
+            DataClassesDataContext dtx = new DataClassesDataContext();
+            var updatedScard = dtx.S_Cards.FirstOrDefault(s => s.Id == s_card.Id);
+
+            updatedScard.DateOut = s_card.DateOut;
+            updatedScard.DateIn = s_card.DateIn;
+            updatedScard.Id_Lib = s_card.Id_Lib;
+            updatedScard.Id_Student = s_card.Id_Student;
+            updatedScard.Id_Book = s_card.Id_Book;
+
+            dtx.SubmitChanges();
+
+        }
+
+
         public static void InsertBook(Book book)
         {
             var dtx = new DataClassesDataContext();

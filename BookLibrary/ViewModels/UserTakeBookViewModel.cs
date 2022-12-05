@@ -1,7 +1,11 @@
 ﻿using BookLibrary.Commands;
+using BookLibrary.Helpers;
+using BookLibrary.Models;
 using BookLibrary.Services;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -46,12 +50,35 @@ namespace BookLibrary.ViewModels
         }
 
 
+        private ObservableCollection<RentCodeGenerator> rents;
+
+        public ObservableCollection<RentCodeGenerator> Rents
+        {
+            get { return rents; }
+            set { rents = value; OnPropertyChanged(); }
+        }
         public RelayCommand RentCommand { get; set; }
 
+        public RelayCommand BackCommand { get; set; }
 
         public UserTakeBookViewModel()
         {
+
             var dtx = new DataClassesDataContext();
+            Rents = new ObservableCollection<RentCodeGenerator>();
+            if (File.Exists("rents"))
+            {
+                Rents = FileHelper.ReadRents("rents");
+            }
+
+            BackPage = App.MyGrid.Children[0];
+            BackCommand = new RelayCommand(c =>
+            {
+                App.MyGrid.Children.RemoveAt(0);
+                App.MyGrid.Children.Add(BackPage);
+            });
+
+
             RentCommand = new RelayCommand(c =>
             {
                 var new_SCard = new S_Card();
@@ -71,7 +98,25 @@ namespace BookLibrary.ViewModels
                             new_SCard.DateOut = DateTime.Now;
                             new_SCard.DateIn = null;
 
-
+                            var book = dtx.Books.FirstOrDefault(d => d.Id == BookId);
+                            if (book.Quantity > 0)
+                            {
+                                book.Quantity -= 1;
+                                DatabaseController.UpdateBook(book.Id, book.YearPress, book.Comment, book.Name, book.Pages, book.Quantity);
+                                DatabaseController.InsertSCard(new_SCard);
+                                MessageBox.Show("Book has been taken successfully");
+                                RentCodeGenerator rcg = new RentCodeGenerator(bookId, StudentId, DateTime.Now.AddDays(10),new_SCard.Id);
+                                Rents.Add(rcg);
+                                FileHelper.WriteRents(Rents.ToList(), "rents");
+                                MessageBox.Show($"Your return code: {rcg.Code}");
+                                BookId = 0;
+                                DayCount = 0;
+                                StudentId = 0;
+                            }
+                            else
+                            {
+                                MessageBox.Show("Quantity is 0\nYou cannot take this book");
+                            }
                         }
                         else
                         {
@@ -87,8 +132,6 @@ namespace BookLibrary.ViewModels
                 {
                     MessageBox.Show($"Wrong Numbers\nCheck your input and try again . . .", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
                 }
-
-                DatabaseController.InsertSCard(new_SCard);
             });
         }
 

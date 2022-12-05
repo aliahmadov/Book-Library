@@ -7,12 +7,13 @@ FC:\Users\eliah\source\repos\BookLibrary\BookLibrary\Views\ModifyUC.xaml;;
 FC:\Users\eliah\source\repos\BookLibrary\BookLibrary\Views\ShowBooksUC.xaml;;
 FC:\Users\eliah\source\repos\BookLibrary\BookLibrary\Views\UserHomeUC.xaml;;
 FC:\Users\eliah\source\repos\BookLibrary\BookLibrary\Views\UserShowBooksUC.xaml;;
+FC:\Users\eliah\source\repos\BookLibrary\BookLibrary\Views\UserTakeBookUC.xaml;;
 FC:\Users\eliah\source\repos\BookLibrary\BookLibrary\Windows\Additional Windows\AddAuthorWindow.xaml;;
 FC:\Users\eliah\source\repos\BookLibrary\BookLibrary\Windows\Additional Windows\AddCategoryWindow.xaml;;
+FC:\Users\eliah\source\repos\BookLibrary\BookLibrary\Windows\Additional Windows\AddPressWindow.xaml;;
+FC:\Users\eliah\source\repos\BookLibrary\BookLibrary\Windows\Additional Windows\AddThemesWindow.xaml;;
 FC:\Users\eliah\source\repos\BookLibrary\BookLibrary\Windows\DeleteWindow.xaml;;
 FC:\Users\eliah\source\repos\BookLibrary\BookLibrary\Windows\InsertWindow.xaml;;
 FC:\Users\eliah\source\repos\BookLibrary\BookLibrary\Windows\UpdateWindow.xaml;;
-FC:\Users\eliah\source\repos\BookLibrary\BookLibrary\Windows\Additional Windows\AddPressWindow.xaml;;
-FC:\Users\eliah\source\repos\BookLibrary\BookLibrary\Windows\Additional Windows\AddThemesWindow.xaml;;
-FC:\Users\eliah\source\repos\BookLibrary\BookLibrary\Views\UserTakeBookUC.xaml;;
+FC:\Users\eliah\source\repos\BookLibrary\BookLibrary\Views\UserReturnBook.xaml;;
 

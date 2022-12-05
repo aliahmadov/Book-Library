@@ -20,6 +20,7 @@
       <Column Name="Id_Press" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Comment" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BookPrice" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Association Name="Book_S_Card" Member="S_Cards" ThisKey="Id" OtherKey="Id_Book" Type="S_Card" />
       <Association Name="Book_T_Card" Member="T_Cards" ThisKey="Id" OtherKey="Id_Book" Type="T_Card" />
       <Association Name="Author_Book" Member="Author" ThisKey="Id_Author" OtherKey="Id" Type="Author" IsForeignKey="true" />

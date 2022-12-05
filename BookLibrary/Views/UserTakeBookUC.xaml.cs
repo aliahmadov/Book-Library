@@ -47,6 +47,7 @@ namespace BookLibrary.Views
             else
             {
                 bookIdLbl.Content = "Wrong Input";
+                BookId = 0;
                 bookIdLbl.Visibility = Visibility.Visible;
             }
 
@@ -58,6 +59,7 @@ namespace BookLibrary.Views
             else
             {
                 bookIdLbl.Content = "Id does not exist";
+                BookId = 0;
                 bookIdLbl.Visibility = Visibility.Visible;
             }
 
@@ -72,13 +74,12 @@ namespace BookLibrary.Views
                 if (result >= 0)
                 {
                     dayLbl.Visibility = Visibility.Hidden;
-                    Random random = new Random();
                     if (BookId > 0)
                     {
                         var book = dtx.Books.FirstOrDefault(d => d.Id == BookId);
+                        double end_price = (Convert.ToDouble(book.BookPrice) / 10) * 0.1 * result;
+                        priceLbl.Content = end_price.ToString();
                     }
-                    double end_price = (BookId / 10) * 0.1 * result;
-                    priceLbl.Content = end_price.ToString();
                 }
                 else
                 {

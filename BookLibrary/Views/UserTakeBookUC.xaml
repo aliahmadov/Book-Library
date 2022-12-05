@@ -36,7 +36,7 @@
 
             <StackPanel Orientation="Horizontal">
                 <Label Margin="5" FontSize="30" FontFamily="Times New Roman" >Student ID</Label>
-                <TextBox TextChanged="stdIdTxtb_TextChanged" Name="stdIdTxtb" Text="{Binding DayCount}" Margin="5" FontSize="30" Width="200"></TextBox>
+                <TextBox TextChanged="stdIdTxtb_TextChanged" Name="stdIdTxtb" Text="{Binding StudentId}" Margin="5" FontSize="30" Width="200"></TextBox>
                 <Label Name="stdIdLbl" Foreground="Red" VerticalContentAlignment="Center" Visibility="Hidden">Wrong Input</Label>
             </StackPanel>
 

@@ -45,3 +45,8 @@ C:\Users\eliah\source\repos\BookLibrary\BookLibrary\obj\Debug\Windows\Additional
 C:\Users\eliah\source\repos\BookLibrary\BookLibrary\obj\Debug\Windows\Additional Windows\AddThemesWindow.baml
 C:\Users\eliah\source\repos\BookLibrary\BookLibrary\obj\Debug\Views\UserTakeBookUC.g.cs
 C:\Users\eliah\source\repos\BookLibrary\BookLibrary\obj\Debug\Views\UserTakeBookUC.baml
+C:\Users\eliah\source\repos\BookLibrary\BookLibrary\bin\Debug\Newtonsoft.Json.dll
+C:\Users\eliah\source\repos\BookLibrary\BookLibrary\bin\Debug\Newtonsoft.Json.xml
+C:\Users\eliah\source\repos\BookLibrary\BookLibrary\obj\Debug\BookLibrary.csproj.CopyComplete
+C:\Users\eliah\source\repos\BookLibrary\BookLibrary\obj\Debug\Views\UserReturnBook.g.cs
+C:\Users\eliah\source\repos\BookLibrary\BookLibrary\obj\Debug\Views\UserReturnBook.baml

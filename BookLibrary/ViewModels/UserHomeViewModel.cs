@@ -16,6 +16,9 @@ namespace BookLibrary.ViewModels
         public RelayCommand ReturnCommand { get; set; }
         public RelayCommand BackCommand { get; set; }
 
+
+        public string TotalPrice { get; set; }
+
         private UserBook GetUserBook(Book book)
         {
             var dtx = new DataClassesDataContext();
@@ -85,7 +88,9 @@ namespace BookLibrary.ViewModels
                 var view = new UserTakeBookUC();
                 var viewModel = new UserTakeBookViewModel();
                 view.DataContext = viewModel;
+                TotalPrice = view.priceLbl.Content?.ToString();
 
+                viewModel.TotalPrice = Convert.ToDouble(TotalPrice);
                 App.MyGrid.Children.RemoveAt(0);
                 App.MyGrid.Children.Add(view);
 
@@ -93,6 +98,12 @@ namespace BookLibrary.ViewModels
 
             ReturnCommand = new RelayCommand(d =>
             {
+                var view = new UserReturnBook();
+                var viewModel = new UserReturnBookViewModel();
+                view.DataContext = viewModel;
+
+                App.MyGrid.Children.RemoveAt(0);
+                App.MyGrid.Children.Add(view);
 
             });
         }

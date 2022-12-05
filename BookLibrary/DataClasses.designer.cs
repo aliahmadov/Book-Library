@@ -378,6 +378,8 @@ namespace BookLibrary
 		
 		private int _Quantity;
 		
+		private System.Nullable<decimal> _BookPrice;
+		
 		private EntitySet<S_Card> _S_Cards;
 		
 		private EntitySet<T_Card> _T_Cards;
@@ -414,6 +416,8 @@ namespace BookLibrary
     partial void OnCommentChanged();
     partial void OnQuantityChanging(int value);
     partial void OnQuantityChanged();
+    partial void OnBookPriceChanging(System.Nullable<decimal> value);
+    partial void OnBookPriceChanged();
     #endregion
 		
 		public Book()
@@ -639,6 +643,26 @@ namespace BookLibrary
 					this._Quantity = value;
 					this.SendPropertyChanged("Quantity");
 					this.OnQuantityChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BookPrice", DbType="Money")]
+		public System.Nullable<decimal> BookPrice
+		{
+			get
+			{
+				return this._BookPrice;
+			}
+			set
+			{
+				if ((this._BookPrice != value))
+				{
+					this.OnBookPriceChanging(value);
+					this.SendPropertyChanging();
+					this._BookPrice = value;
+					this.SendPropertyChanged("BookPrice");
+					this.OnBookPriceChanged();
 				}
 			}
 		}

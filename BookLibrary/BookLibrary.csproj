@@ -35,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Linq" />
@@ -56,13 +59,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Helpers\FileHelper.cs" />
     <Compile Include="Models\MyBook.cs" />
+    <Compile Include="Models\RentCodeGenerator.cs" />
     <Compile Include="Models\UserBook.cs" />
     <Compile Include="Services\DatabaseController.cs" />
     <Compile Include="Services\SpecialServices.cs" />
     <Compile Include="ViewModels\ModifyViewModel.cs" />
     <Compile Include="ViewModels\ShowBooksViewModel.cs" />
     <Compile Include="ViewModels\UserHomeViewModel.cs" />
+    <Compile Include="ViewModels\UserReturnBookViewModel.cs" />
     <Compile Include="ViewModels\UserShowBooksViewModel.cs" />
     <Compile Include="ViewModels\UserTakeBookViewModel.cs" />
     <Compile Include="ViewModels\Window ViewModels\AdditionalViewModels\AddAuthorViewModel.cs" />
@@ -80,6 +86,9 @@
     </Compile>
     <Compile Include="Views\UserHomeUC.xaml.cs">
       <DependentUpon>UserHomeUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserReturnBook.xaml.cs">
+      <DependentUpon>UserReturnBook.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\UserShowBooksUC.xaml.cs">
       <DependentUpon>UserShowBooksUC.xaml</DependentUpon>
@@ -163,6 +172,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\UserReturnBook.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\UserShowBooksUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -226,6 +239,7 @@
     <None Include="DataClasses.dbml.layout">
       <DependentUpon>DataClasses.dbml</DependentUpon>
     </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
