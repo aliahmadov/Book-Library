@@ -15,6 +15,8 @@ namespace BookLibrary.Models
         public int Pages { get; set; }
         public string Press { get; set; }
         public string Comment { get; set; }
+        public double Price { get; set; }
         public int YearPress { get; set; }
+
     }
 }

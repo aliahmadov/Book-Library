@@ -35,7 +35,8 @@ namespace BookLibrary.ViewModels
                 Name = book.Name,
                 Comment = book.Comment,
                 Pages = book.Pages,
-                YearPress = book.YearPress
+                YearPress = book.YearPress,
+                Price = Convert.ToDouble(book.BookPrice)
 
             };
         }

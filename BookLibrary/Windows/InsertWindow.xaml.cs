@@ -132,5 +132,29 @@ namespace BookLibrary.Windows
         {
             CheckRadioButtons(insertStackPanel);
         }
+
+        private void priceTxtb_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            var hasParsed = int.TryParse(priceTxtb.Text, out int result);
+
+            if (!hasParsed)
+            {
+                priceLbl.Foreground = Brushes.Red;
+                priceLbl.Content = "Wrong Input";
+                priceLbl.FontSize = 9;
+                priceLbl.Visibility = Visibility.Visible;
+            }
+            else if (hasParsed && result < 0)
+            {
+                priceLbl.Foreground = Brushes.Red;
+                priceLbl.Content = "Enter positive number or 0";
+                priceLbl.FontSize = 9;
+                priceLbl.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                priceLbl.Visibility = Visibility.Hidden;
+            }
+        }
     }
 }

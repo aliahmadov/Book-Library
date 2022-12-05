@@ -13,16 +13,21 @@ namespace BookLibrary.Models
         public int S_CardId { get; set; }
         public int BookId { get; set; }
         public int StudentId { get; set; }
-        public DateTime DateIn { get; set; }
+        public DateTime? DateIn { get; set; }
 
-        public RentCodeGenerator(int id,int stdId, DateTime dateIn, int cardId)
+        public DateTime DateOut { get; set; }
+        public int DayCount { get; set; }
+
+
+        public RentCodeGenerator(int id, int stdId, int cardId, int dayCount, DateTime dateOut)
         {
             Code = new Guid();
             Code = Guid.NewGuid();
             BookId = id;
             StudentId = stdId;
-            DateIn = dateIn;
             S_CardId = cardId;
+            DayCount = dayCount;
+            DateOut = dateOut;
         }
 
     }

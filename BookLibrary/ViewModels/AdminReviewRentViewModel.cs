@@ -7,22 +7,19 @@ using System.Threading.Tasks;
 
 namespace BookLibrary.ViewModels
 {
-    internal class UserShowBooksViewModel:BaseViewModel
+    internal class AdminReviewRentViewModel:BaseViewModel
     {
-
         public RelayCommand BackCommand { get; set; }
 
 
-        public UserShowBooksViewModel()
+        public AdminReviewRentViewModel()
         {
             BackPage = App.MyGrid.Children[0];
-
             BackCommand = new RelayCommand(c =>
             {
                 App.MyGrid.Children.RemoveAt(0);
                 App.MyGrid.Children.Add(BackPage);
             });
-
         }
     }
 }

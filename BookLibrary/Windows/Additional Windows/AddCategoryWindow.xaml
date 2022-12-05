@@ -9,7 +9,7 @@
     <Grid Background="White">
         <StackPanel>
             <Label Margin="10" HorizontalContentAlignment="Center" 
-                       Foreground="Red" FontWeight="Black">Delete Forum</Label>
+                       Foreground="Red" FontWeight="Black">Add Category</Label>
 
             <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
                 <Label>Category</Label>

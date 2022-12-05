@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BookLibrary.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,10 +28,29 @@ namespace BookLibrary.Services
             return books;
         }
 
-        public static void UpdateBook(int id,int year_press,string comment,
-                                        string name,int pageCount,int quantity)
+        public static IQueryable<SCardModel> GetSCardData()
         {
-            DataClassesDataContext dtx=new DataClassesDataContext();
+            DataClassesDataContext dtx = new DataClassesDataContext();
+            var s_cards = from s in dtx.S_Cards
+                          select new SCardModel
+                          {
+                              Id = s.Id,
+                              BookName = dtx.Books.FirstOrDefault(d => d.Id == s.Id_Book).Name,
+                              StdFirstName = dtx.Students.FirstOrDefault(d => d.Id == s.Id_Student).FirstName,
+                              StdLastName = dtx.Students.FirstOrDefault(d => d.Id == s.Id_Student).LastName,
+                              LibFirstName = dtx.Libs.FirstOrDefault(d => d.Id == s.Id_Lib).FirstName,
+                              LibLastName = dtx.Libs.FirstOrDefault(d => d.Id == s.Id_Lib).LastName,
+                              DateIn = s.DateIn,
+                              DateOut = s.DateOut
+
+                          };
+            return s_cards;
+        }
+
+        public static void UpdateBook(int id, int year_press, string comment,
+                                        string name, int pageCount, int quantity)
+        {
+            DataClassesDataContext dtx = new DataClassesDataContext();
             var updatedBook = dtx.Books.FirstOrDefault(b => b.Id == id);
 
             updatedBook.Name = name;
@@ -39,7 +59,7 @@ namespace BookLibrary.Services
             updatedBook.Quantity = quantity;
             updatedBook.Pages = pageCount;
             dtx.SubmitChanges();
-            
+
         }
 
         public static void UpdateSCard(S_Card s_card)

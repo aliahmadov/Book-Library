@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\eliah\source\repos\BookLibrary\BookLibrary\App.xaml
-181038238611
+19-1848263053
 
-45477908658
+48701379991
 151173294366
-ResourceDictionaries\ButtonDictionary.xaml;ResourceDictionaries\ColorDictionary.xaml;Views\AdminHomeUC.xaml;Views\HomeUC.xaml;Views\MainWindow.xaml;Views\ModifyUC.xaml;Views\ShowBooksUC.xaml;Views\UserHomeUC.xaml;Views\UserReturnBook.xaml;Views\UserShowBooksUC.xaml;Views\UserTakeBookUC.xaml;Windows\Additional Windows\AddAuthorWindow.xaml;Windows\Additional Windows\AddCategoryWindow.xaml;Windows\Additional Windows\AddPressWindow.xaml;Windows\Additional Windows\AddThemesWindow.xaml;Windows\DeleteWindow.xaml;Windows\InsertWindow.xaml;Windows\UpdateWindow.xaml;
+ResourceDictionaries\ButtonDictionary.xaml;ResourceDictionaries\ColorDictionary.xaml;Views\AdminHomeUC.xaml;Views\AdminReviewRentUC.xaml;Views\HomeUC.xaml;Views\MainWindow.xaml;Views\ModifyUC.xaml;Views\ShowBooksUC.xaml;Views\UserHomeUC.xaml;Views\UserReturnBook.xaml;Views\UserShowBooksUC.xaml;Views\UserTakeBookUC.xaml;Windows\Additional Windows\AddAuthorWindow.xaml;Windows\Additional Windows\AddCategoryWindow.xaml;Windows\Additional Windows\AddPressWindow.xaml;Windows\Additional Windows\AddThemesWindow.xaml;Windows\DeleteWindow.xaml;Windows\InsertWindow.xaml;Windows\UpdateWindow.xaml;
 
 True
 

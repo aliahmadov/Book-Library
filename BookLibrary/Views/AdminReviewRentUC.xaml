@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="BookLibrary.Views.UserShowBooksUC"
+﻿<UserControl x:Class="BookLibrary.Views.AdminReviewRentUC"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -14,10 +14,10 @@
                     <Image  Source="/Images/leftarrow.png" Width="30"></Image>
                 </Button>
             </StackPanel>
-            <DataGrid Name="userDataGrid">
+            <DataGrid Name="rentDataGrid">
 
             </DataGrid>
-            
+
         </StackPanel>
         <StackPanel HorizontalAlignment="Left" VerticalAlignment="Bottom">
             <Label FontWeight="Bold"  FontSize="55"  Foreground="Green" FontFamily="Kunstler Script">Library</Label>

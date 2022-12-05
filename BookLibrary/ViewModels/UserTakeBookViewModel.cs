@@ -66,7 +66,7 @@ namespace BookLibrary.ViewModels
 
             var dtx = new DataClassesDataContext();
             Rents = new ObservableCollection<RentCodeGenerator>();
-            if (File.Exists("rents"))
+            if (File.Exists("rents.json"))
             {
                 Rents = FileHelper.ReadRents("rents");
             }
@@ -105,7 +105,7 @@ namespace BookLibrary.ViewModels
                                 DatabaseController.UpdateBook(book.Id, book.YearPress, book.Comment, book.Name, book.Pages, book.Quantity);
                                 DatabaseController.InsertSCard(new_SCard);
                                 MessageBox.Show("Book has been taken successfully");
-                                RentCodeGenerator rcg = new RentCodeGenerator(bookId, StudentId, DateTime.Now.AddDays(10),new_SCard.Id);
+                                RentCodeGenerator rcg = new RentCodeGenerator(bookId, StudentId,new_SCard.Id,DayCount,DateTime.Now);
                                 Rents.Add(rcg);
                                 FileHelper.WriteRents(Rents.ToList(), "rents");
                                 MessageBox.Show($"Your return code: {rcg.Code}");

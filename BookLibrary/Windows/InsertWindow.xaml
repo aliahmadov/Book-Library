@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BookLibrary.Windows"
         mc:Ignorable="d"
-        Title="InsertWindow" Height="450" Width="475">
+        Title="InsertWindow" Height="500" Width="475">
     <Grid Background="White">
         <StackPanel Name="insertStackPanel" VerticalAlignment="Center">
             <StackPanel>
@@ -139,6 +139,14 @@
                 <TextBox  Text="{Binding Book.Comment, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                           Width="200" Margin="13,10,0,10"></TextBox>
                 <Label Name="cmtLabel" Foreground="Red" FontSize="8" VerticalAlignment="Center" Visibility="Hidden">Id already exists</Label>
+            </StackPanel>
+
+            <StackPanel Background="White"
+                    Orientation="Horizontal">
+                <Label Margin="0,5,0,0">Price</Label>
+                <TextBox Name="priceTxtb" TextChanged="priceTxtb_TextChanged" Text="{Binding Book.BookPrice, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                          Width="200" Margin="40,10,0,10"></TextBox>
+                <Label Name="priceLbl" Foreground="Red" FontSize="8" VerticalAlignment="Center" Visibility="Hidden">Id already exists</Label>
             </StackPanel>
         </StackPanel>
 

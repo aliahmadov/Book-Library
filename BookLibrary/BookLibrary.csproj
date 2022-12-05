@@ -62,9 +62,11 @@
     <Compile Include="Helpers\FileHelper.cs" />
     <Compile Include="Models\MyBook.cs" />
     <Compile Include="Models\RentCodeGenerator.cs" />
+    <Compile Include="Models\SCardModel.cs" />
     <Compile Include="Models\UserBook.cs" />
     <Compile Include="Services\DatabaseController.cs" />
     <Compile Include="Services\SpecialServices.cs" />
+    <Compile Include="ViewModels\AdminReviewRentViewModel.cs" />
     <Compile Include="ViewModels\ModifyViewModel.cs" />
     <Compile Include="ViewModels\ShowBooksViewModel.cs" />
     <Compile Include="ViewModels\UserHomeViewModel.cs" />
@@ -78,6 +80,9 @@
     <Compile Include="ViewModels\Window ViewModels\DeleteViewModel.cs" />
     <Compile Include="ViewModels\Window ViewModels\InsertWindowViewModel.cs" />
     <Compile Include="ViewModels\Window ViewModels\UpdateWindowViewModel.cs" />
+    <Compile Include="Views\AdminReviewRentUC.xaml.cs">
+      <DependentUpon>AdminReviewRentUC.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ModifyUC.xaml.cs">
       <DependentUpon>ModifyUC.xaml</DependentUpon>
     </Compile>
@@ -128,6 +133,10 @@
     <Page Include="Views\AdminHomeUC.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\AdminReviewRentUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\HomeUC.xaml">
       <SubType>Designer</SubType>

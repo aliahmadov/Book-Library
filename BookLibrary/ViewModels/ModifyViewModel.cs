@@ -109,67 +109,77 @@ namespace BookLibrary.ViewModels
                 var category = new Category();
                 var author = new Author();
                 var press = new Press();
-                int press_id = 0;
-                int theme_id = 0;
-                int author_id = 0;
-                int category_id = 0;
+
                 if (insertViewModel.SelectedPress == null)
                 {
-                    press.Name = insertViewModel.AddedPress;
-                    var lastID = dtx.Presses.Skip(dtx.Presses.Count() - 1).First().Id;
-                    press.Id = lastID + 1;
-                    DatabaseController.InsertPress(press);
-                    InsertedBook.Id_Press = press.Id;
+                    if (insertViewModel.AddedPress != null)
+                    {
+                        press.Name = insertViewModel.AddedPress;
+                        var lastID = dtx.Presses.Skip(dtx.Presses.Count() - 1).First().Id;
+                        press.Id = lastID + 1;
+                        DatabaseController.InsertPress(press);
+                        InsertedBook.Id_Press = press.Id;
+                    }
                 }
                 else
                 {
-                    press_id = dtx.Presses.FirstOrDefault(d => d.Name == insertViewModel.SelectedPress).Id;
-                    InsertedBook.Id_Press = press_id;
+                    press.Id = dtx.Presses.FirstOrDefault(d => d.Name == insertViewModel.SelectedPress).Id;
+                    InsertedBook.Id_Press = press.Id;
                 }
 
                 if (insertViewModel.SelectedThemes == null)
                 {
-                    theme.Name = insertViewModel.AddedThemes;
-                    var lastID = dtx.Themes.Skip(dtx.Themes.Count() - 1).First().Id;
-                    theme.Id = lastID + 1;
-                    InsertedBook.Id_Themes = theme.Id;
-                    DatabaseController.InsertThemes(theme);
+                    if (insertViewModel.AddedThemes != null)
+                    {
+                        theme.Name = insertViewModel.AddedThemes;
+                        var lastID = dtx.Themes.Skip(dtx.Themes.Count() - 1).First().Id;
+                        theme.Id = lastID + 1;
+                        DatabaseController.InsertThemes(theme);
+                        InsertedBook.Id_Themes = theme.Id;
+                    }
                 }
                 else
                 {
-                    theme_id = dtx.Themes.FirstOrDefault(d => d.Name == insertViewModel.SelectedThemes).Id;
-                    InsertedBook.Id_Themes = theme_id;
+                    theme.Id = dtx.Themes.FirstOrDefault(d => d.Name == insertViewModel.SelectedThemes).Id;
+                    InsertedBook.Id_Themes = theme.Id;
                 }
 
                 if (insertViewModel.SelectedCategory == null)
                 {
-                    category.Name = insertViewModel.AddedCategory;
-                    var lastID = dtx.Categories.Skip(dtx.Categories.Count() - 1).First().Id;
-                    category.Id = lastID + 1;
+                    if (insertViewModel.AddedCategory != null)
+                    {
+                        category.Name = insertViewModel.AddedCategory;
+                        var lastID = dtx.Categories.Skip(dtx.Categories.Count() - 1).First().Id;
+                        category.Id = lastID + 1;
+                        DatabaseController.InsertCategory(category);
 
-                    InsertedBook.Id_Category = category.Id;
-                    DatabaseController.InsertCategory(category);
+                        InsertedBook.Id_Category = category.Id;
+                    }
                 }
                 else
                 {
-                    category_id = dtx.Categories.FirstOrDefault(d => d.Name == insertViewModel.SelectedCategory).Id;
-                    InsertedBook.Id_Category = category_id;
+                    category.Id = dtx.Categories.FirstOrDefault(d => d.Name == insertViewModel.SelectedCategory).Id;
+                    InsertedBook.Id_Category = category.Id;
                 }
 
                 if (insertViewModel.SelectedAuthor == null)
                 {
-                    author.FirstName = insertViewModel.AddedAuthorName;
-                    author.LastName = insertViewModel.AddedAuthorSurname;
-                    var lastID = dtx.Authors.Skip(dtx.Authors.Count() - 1).First().Id;
-                    author.Id = lastID + 1;
+                    if (insertViewModel.AddedAuthorName != null)
+                    {
 
-                    InsertedBook.Id_Author = author.Id;
-                    DatabaseController.InsertAuthor(author);
+                        author.FirstName = insertViewModel.AddedAuthorName;
+                        author.LastName = insertViewModel.AddedAuthorSurname;
+                        var lastID = dtx.Authors.Skip(dtx.Authors.Count() - 1).First().Id;
+                        author.Id = lastID + 1;
+                        DatabaseController.InsertAuthor(author);
+
+                        InsertedBook.Id_Author = author.Id;
+                    }
                 }
                 else
                 {
-                    author_id = dtx.Authors.FirstOrDefault(d => d.FirstName + " " + d.LastName == insertViewModel.SelectedAuthor).Id;
-                    InsertedBook.Id_Author = author_id;
+                    author.Id = dtx.Authors.FirstOrDefault(d => d.FirstName + " " + d.LastName == insertViewModel.SelectedAuthor).Id;
+                    InsertedBook.Id_Author = author.Id;
                 }
 
                 var insertedBook = insertViewModel.Book;
@@ -180,6 +190,7 @@ namespace BookLibrary.ViewModels
                 InsertedBook.Pages = insertedBook.Pages;
                 InsertedBook.YearPress = insertedBook.YearPress;
                 InsertedBook.Id = insertedBook.Id;
+                InsertedBook.BookPrice = insertedBook.BookPrice;
 
                 var isBookExist = dtx.Books.Any(b => b.Id == InsertedBook.Id);
 
@@ -187,9 +198,12 @@ namespace BookLibrary.ViewModels
 
                 if (IsFullInsertForum(InsertedBook) && !isBookExist && insertView.qtyLabel.Visibility == Visibility.Hidden)
                 {
-                    DatabaseController.InsertBook(InsertedBook);
-                    MessageBox.Show($"{insertViewModel.Book.Name} has been added successfully", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
-                    ModifyDataGrid.ItemsSource = DatabaseController.GetAllBooks();
+                    if (press.Id != 0 && theme.Id != 0 && category.Id != 0 && author.Id != 0)
+                    {
+                        DatabaseController.InsertBook(InsertedBook);
+                        MessageBox.Show($"{insertViewModel.Book.Name} has been added successfully", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                        ModifyDataGrid.ItemsSource = DatabaseController.GetAllBooks();
+                    }
 
                 }
                 else

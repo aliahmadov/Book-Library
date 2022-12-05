@@ -17,6 +17,8 @@ namespace BookLibrary.ViewModels
 
         public RelayCommand ModifyCommand { get; set; }
 
+        public RelayCommand ReviewRentsCommand { get; set; }
+
         public RelayCommand DeleteCommand { get; set; }
         public AdminHomeViewModel()
         {
@@ -49,6 +51,17 @@ namespace BookLibrary.ViewModels
                 App.MyGrid.Children.Add(view);
             });
 
+
+            ReviewRentsCommand = new RelayCommand(c =>
+            {
+                var view = new AdminReviewRentUC();
+                var viewModel = new AdminReviewRentViewModel();
+                view.DataContext = viewModel;
+                view.rentDataGrid.ItemsSource = DatabaseController.GetSCardData();
+
+                App.MyGrid.Children.RemoveAt(0);
+                App.MyGrid.Children.Add(view);
+            });
 
 
         }
