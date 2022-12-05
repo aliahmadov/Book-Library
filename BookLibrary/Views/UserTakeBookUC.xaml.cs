@@ -25,7 +25,7 @@ namespace BookLibrary.Views
             InitializeComponent();
         }
 
-
+        public int BookId { get; set; }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -53,6 +53,7 @@ namespace BookLibrary.Views
             if (dtx.Books.Any(b => b.Id == result))
             {
                 bookIdLbl.Visibility = Visibility.Hidden;
+                BookId = result;
             }
             else
             {
@@ -65,15 +66,18 @@ namespace BookLibrary.Views
         private void dayTxtb_TextChanged(object sender, TextChangedEventArgs e)
         {
             var hasParsed = int.TryParse(dayTxtb.Text, out int result);
-
+            var dtx = new DataClassesDataContext();
             if (hasParsed)
             {
                 if (result >= 0)
                 {
                     dayLbl.Visibility = Visibility.Hidden;
                     Random random = new Random();
-                    int book_price = random.Next(10, 50);
-                    double end_price = (book_price / 10) * 0.1 * result;
+                    if (BookId > 0)
+                    {
+                        var book = dtx.Books.FirstOrDefault(d => d.Id == BookId);
+                    }
+                    double end_price = (BookId / 10) * 0.1 * result;
                     priceLbl.Content = end_price.ToString();
                 }
                 else
